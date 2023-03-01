@@ -16,13 +16,19 @@
         <copyright>DaData.ru</copyright>
         <tags>DaData.ru API C# .NET</tags>
         <dependencies>
-            <group targetFramework=".NETStandard2.0" />
-            <group>
-                <dependency id="Newtonsoft.Json" version="12.0.2"/>
+            <group targetFramework=".NETFramework4.5.2">
+                <dependency id="Newtonsoft.Json" version="12.0.2" exclude="Build,Analyzers" />
+            </group>
+            <group targetFramework=".NETStandard2.0">
+                <dependency id="Newtonsoft.Json" version="12.0.2" exclude="Build,Analyzers" />
             </group>
         </dependencies>
+        <frameworkAssemblies>
+            <frameworkAssembly assemblyName="System.Net.Http" targetFramework=".NETFramework4.5.2" />
+        </frameworkAssemblies>
     </metadata>
     <files>
         <file src="Dadata\bin\Release\netstandard2.0\Dadata.dll" target="lib\netstandard2.0"/>
+        <file src="Dadata\bin\Release\net452\Dadata.dll" target="lib\net452"/>
     </files>
 </package>
